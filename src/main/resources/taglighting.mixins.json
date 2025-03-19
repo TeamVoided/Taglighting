@@ -6,7 +6,6 @@
   "mixins": [
     "portal.AbstractFireBlockMixin",
     "portal.AreaHelperMixin",
-    "WallMountedBlockMixin",
     "suports.WitherRoseBlockMixin",
     "suports.NetherWartBlockMixin",
     "suports.CactusBlockMixin",
