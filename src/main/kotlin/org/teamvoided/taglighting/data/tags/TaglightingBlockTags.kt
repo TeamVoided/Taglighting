@@ -21,6 +21,12 @@ object TaglightingBlockTags {
     @JvmField
     val PISTON_IMMOVABLE = create("piston_immovable")
 
+    @JvmField
+    val UNIQUE_STICKY_BLOCK = create("unique_sticky_block")
+
+    @JvmField
+    val MOB_MOVING_STICKY_BLOCK = create("mob_moving_sticky_block")
+
     // Supports
     @JvmField
     val SUPPORTS_SUGAR_CANE = supports("sugar_cane")

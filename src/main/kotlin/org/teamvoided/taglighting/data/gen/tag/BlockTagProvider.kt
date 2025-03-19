@@ -27,6 +27,13 @@ class BlockTagProvider(o: Pack, r: FutureProvider) : BlockTagProvider(o, r) {
             .add(RESPAWN_ANCHOR)
             .add(REINFORCED_DEEPSLATE)
 
+        getOrCreateTagBuilder(Tags.UNIQUE_STICKY_BLOCK)
+            .add(SLIME_BLOCK)
+            .addTag(Tags.MOB_MOVING_STICKY_BLOCK)
+
+        getOrCreateTagBuilder(Tags.MOB_MOVING_STICKY_BLOCK)
+            .add(HONEY_BLOCK)
+
         supports()
         supportsSpecial()
 //        testing()
@@ -79,7 +86,7 @@ class BlockTagProvider(o: Pack, r: FutureProvider) : BlockTagProvider(o, r) {
     }
 
 
-    private fun testing() = ALL_TAGS.forEach {
+    private fun testing() = ALL_TAGS.filter { it != Tags.PISTON_IMMOVABLE }.forEach {
         getOrCreateTagBuilder(it).add(DIAMOND_BLOCK, NETHERITE_BLOCK, GOLD_BLOCK, EMERALD_BLOCK)
     }
 }
