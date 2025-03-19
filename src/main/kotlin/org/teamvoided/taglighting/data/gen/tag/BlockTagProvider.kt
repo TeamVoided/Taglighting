@@ -1,65 +1,72 @@
 package org.teamvoided.taglighting.data.gen.tag
 
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider.BlockTagProvider
-import net.minecraft.block.Blocks
+import net.minecraft.block.Blocks.*
 import net.minecraft.registry.HolderLookup
 import net.minecraft.registry.tag.BlockTags
 import org.teamvoided.taglighting.misc.FutureProvider
 import org.teamvoided.taglighting.misc.Pack
-import org.teamvoided.taglighting.data.tags.TaglightingBlockTags
+import org.teamvoided.taglighting.data.tags.TaglightingBlockTags as Tags
+import org.teamvoided.taglighting.data.tags.TaglightingBlockTags.ALL_TAGS
 
 class BlockTagProvider(o: Pack, r: FutureProvider) : BlockTagProvider(o, r) {
     override fun configure(provider: HolderLookup.Provider) {
-        getOrCreateTagBuilder(TaglightingBlockTags.SUGAR_CANE_HYDRATION)
-            .add(Blocks.ICE)
-            .add(Blocks.FROSTED_ICE)
+        getOrCreateTagBuilder(Tags.SUGAR_CANE_HYDRATION)
+            .add(ICE)
+            .add(FROSTED_ICE)
 
-        getOrCreateTagBuilder(TaglightingBlockTags.ENDERMAN_PLACEABLE)
+        getOrCreateTagBuilder(Tags.ENDERMAN_PLACEABLE)
             .forceAddTag(BlockTags.ENDERMAN_HOLDABLE)
 
-        getOrCreateTagBuilder(TaglightingBlockTags.NETHER_PORTAL_FRAME)
-            .add(Blocks.OBSIDIAN)
+        getOrCreateTagBuilder(Tags.NETHER_PORTAL_FRAME)
+            .add(OBSIDIAN)
 
         supports()
         supportsSpecial()
     }
 
     private fun supports() {
-        getOrCreateTagBuilder(TaglightingBlockTags.SUPPORTS_SUGAR_CANE)
+        getOrCreateTagBuilder(Tags.SUPPORTS_SUGAR_CANE)
             .forceAddTag(BlockTags.DIRT)
             .forceAddTag(BlockTags.SAND)
 
-        getOrCreateTagBuilder(TaglightingBlockTags.SUPPORTS_WITHER_ROSE)
+        getOrCreateTagBuilder(Tags.SUPPORTS_WITHER_ROSE)
             .forceAddTag(BlockTags.DIRT)
-            .add(Blocks.FARMLAND)
-            .add(Blocks.NETHERRACK)
-            .add(Blocks.SOUL_SAND)
-            .add(Blocks.SOUL_SOIL)
+            .add(FARMLAND)
+            .add(NETHERRACK)
+            .add(SOUL_SAND)
+            .add(SOUL_SOIL)
 
-        getOrCreateTagBuilder(TaglightingBlockTags.SUPPORTS_CACTUS)
+        getOrCreateTagBuilder(Tags.SUPPORTS_CACTUS)
             .forceAddTag(BlockTags.SAND)
 
-        getOrCreateTagBuilder(TaglightingBlockTags.SUPPORTS_NETHER_WART)
-            .add(Blocks.SOUL_SAND)
+        getOrCreateTagBuilder(Tags.SUPPORTS_NETHER_WART)
+            .add(SOUL_SAND)
 
-        getOrCreateTagBuilder(TaglightingBlockTags.SUPPORTS_NYLIUM_PLANTS)
+        getOrCreateTagBuilder(Tags.SUPPORTS_NYLIUM_PLANTS)
             .forceAddTag(BlockTags.NYLIUM)
-            .add(Blocks.SOUL_SOIL)
+            .add(SOUL_SOIL)
             .forceAddTag(BlockTags.DIRT)
-            .add(Blocks.FARMLAND)
+            .add(FARMLAND)
     }
 
     private fun supportsSpecial() {
-        getOrCreateTagBuilder(TaglightingBlockTags.SUPPORTS_SMALL_TOP)
+        getOrCreateTagBuilder(Tags.SUPPORTS_SMALL_TOP)
             .forceAddTag(BlockTags.FENCES)
             .forceAddTag(BlockTags.WALLS)
 
-        getOrCreateTagBuilder(TaglightingBlockTags.SUPPORTS_SMALL_BOTTOM)
+        getOrCreateTagBuilder(Tags.SUPPORTS_SMALL_BOTTOM)
             .forceAddTag(BlockTags.FENCES)
             .forceAddTag(BlockTags.WALLS)
 
         getOrCreateTagBuilder(BlockTags.WALL_POST_OVERRIDE)
             .forceAddTag(BlockTags.BUTTONS)
-            .add(Blocks.LEVER)
+            .add(LEVER)
     }
+
+
+    private fun testing() = ALL_TAGS.forEach {
+        getOrCreateTagBuilder(it).add(DIAMOND_BLOCK, NETHERITE_BLOCK, GOLD_BLOCK, EMERALD_BLOCK)
+    }
+
 }

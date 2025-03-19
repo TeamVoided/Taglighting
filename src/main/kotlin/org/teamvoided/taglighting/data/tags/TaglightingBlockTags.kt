@@ -1,10 +1,14 @@
 package org.teamvoided.taglighting.data.tags
 
+import net.minecraft.block.Block
 import net.minecraft.registry.RegistryKeys
+import net.minecraft.registry.tag.TagKey
 import org.teamvoided.taglighting.Taglighting.id
 import org.teamvoided.taglighting.misc.tag
 
 object TaglightingBlockTags {
+    val ALL_TAGS = mutableListOf<TagKey<Block>>()
+
     @JvmField
     val SUGAR_CANE_HYDRATION = create("sugar_cane_hydration")
 
@@ -41,6 +45,11 @@ object TaglightingBlockTags {
     val SUPPORTS_SMALL_SIDES = supports("small/sides")
 
     // functions
-    private fun create(id: String) = RegistryKeys.BLOCK.tag(id(id))
+    private fun create(id: String): TagKey<Block> {
+        val tag = RegistryKeys.BLOCK.tag(id(id))
+        ALL_TAGS.add(tag)
+        return tag
+    }
+
     private fun supports(id: String) = create("supports/$id")
 }
