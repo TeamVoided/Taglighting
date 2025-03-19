@@ -10,7 +10,7 @@ fabricApiVersion = "0.115.2+1.21.1"
 fabricLangKotlinVersion = "1.11.0+kotlin.2.0.0"
 license = "MIT"
 modules = [ ]
-modDescription = "Finally feature X is now a tag instead of beeing a random hardcoded thing. Yipeee!"
+modDescription = "\"Why is this not a Tag?\" the mod"
 # Modmenu badges, values can be: [ library, deprecated ]
 badges = [ ]
 disableKotlin = false
