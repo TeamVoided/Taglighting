@@ -1,19 +1,18 @@
 package org.teamvoided.taglighting.mixin.suports;
 
-import net.minecraft.block.Block;
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
+import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CactusBlock;
-import net.minecraft.registry.tag.TagKey;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Redirect;
 import org.teamvoided.taglighting.data.tags.TaglightingBlockTags;
 
 
 @Mixin(CactusBlock.class)
 public class CactusBlockMixin {
-    @Redirect(method = "canPlaceAt", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockState;isIn(Lnet/minecraft/registry/tag/TagKey;)Z"))
-    private boolean tagPlacementCheck(BlockState instance, TagKey<Block> tagKey) {
-        return instance.isIn(TaglightingBlockTags.SUPPORTS_CACTUS);
+    @ModifyExpressionValue(method = "canPlaceAt", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockState;isIn(Lnet/minecraft/registry/tag/TagKey;)Z"))
+    private boolean tagPlacementCheck(boolean original, @Local(ordinal = 1) BlockState state) {
+        return state.isIn(TaglightingBlockTags.SUPPORTS_CACTUS);
     }
 }
