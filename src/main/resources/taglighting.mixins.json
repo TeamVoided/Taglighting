@@ -3,7 +3,18 @@
   "minVersion": "0.8",
   "package": "org.teamvoided.taglighting.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [],
+  "mixins": [
+    "portal.AbstractFireBlockMixin",
+    "portal.AreaHelperMixin",
+    "WallMountedBlockMixin",
+    "suports.WitherRoseBlockMixin",
+    "suports.NetherWartBlockMixin",
+    "suports.CactusBlockMixin",
+    "suports.SugarCaneBlockMixin",
+    "suports.NyliumPlantBlockMixin",
+    "EndermanPlaceBlockMixin",
+    "suports.special.WallMountedBlockMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   }

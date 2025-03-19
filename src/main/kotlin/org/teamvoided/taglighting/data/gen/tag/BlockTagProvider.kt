@@ -10,54 +10,56 @@ import org.teamvoided.taglighting.data.tags.TaglightingBlockTags
 
 class BlockTagProvider(o: Pack, r: FutureProvider) : BlockTagProvider(o, r) {
     override fun configure(provider: HolderLookup.Provider) {
-        //Nullium Tags
-        getOrCreateTagBuilder(TaglightingBlockTags.CANE_HYDRATION)
+        getOrCreateTagBuilder(TaglightingBlockTags.SUGAR_CANE_HYDRATION)
             .add(Blocks.ICE)
             .add(Blocks.FROSTED_ICE)
-
-        getOrCreateTagBuilder(TaglightingBlockTags.CANE_SUPPORT)
-            .forceAddTag(BlockTags.DIRT)
-            .forceAddTag(BlockTags.SAND)
-
-        getOrCreateTagBuilder(TaglightingBlockTags.WITHER_ROSE_SUPPORT)
-            .forceAddTag(BlockTags.DIRT)
-            .add(Blocks.FARMLAND)
-            .add(Blocks.NETHERRACK)
-            .add(Blocks.SOUL_SOIL)
-            .add(Blocks.SOUL_SAND)
-
-        getOrCreateTagBuilder(TaglightingBlockTags.SUPPORT_SMALL_TOP)
-            .forceAddTag(BlockTags.FENCES)
-            .forceAddTag(BlockTags.WALLS)
-
-        getOrCreateTagBuilder(TaglightingBlockTags.SUPPORT_SMALL_BOTTOM)
-            .forceAddTag(BlockTags.FENCES)
-            .forceAddTag(BlockTags.WALLS)
 
         getOrCreateTagBuilder(TaglightingBlockTags.ENDERMAN_PLACEABLE)
             .forceAddTag(BlockTags.ENDERMAN_HOLDABLE)
 
-        getOrCreateTagBuilder(TaglightingBlockTags.CACTUS_SUPPORT)
-            .add(Blocks.CACTUS)
+        getOrCreateTagBuilder(TaglightingBlockTags.NETHER_PORTAL_FRAME)
+            .add(Blocks.OBSIDIAN)
+
+        supports()
+        supportsSpecial()
+    }
+
+    private fun supports() {
+        getOrCreateTagBuilder(TaglightingBlockTags.SUPPORTS_SUGAR_CANE)
+            .forceAddTag(BlockTags.DIRT)
             .forceAddTag(BlockTags.SAND)
 
-        getOrCreateTagBuilder(TaglightingBlockTags.NETHER_WART_SUPPORT)
+        getOrCreateTagBuilder(TaglightingBlockTags.SUPPORTS_WITHER_ROSE)
+            .forceAddTag(BlockTags.DIRT)
+            .add(Blocks.FARMLAND)
+            .add(Blocks.NETHERRACK)
+            .add(Blocks.SOUL_SAND)
+            .add(Blocks.SOUL_SOIL)
+
+        getOrCreateTagBuilder(TaglightingBlockTags.SUPPORTS_CACTUS)
+            .forceAddTag(BlockTags.SAND)
+
+        getOrCreateTagBuilder(TaglightingBlockTags.SUPPORTS_NETHER_WART)
             .add(Blocks.SOUL_SAND)
 
-        getOrCreateTagBuilder(TaglightingBlockTags.NYLIUM_PLANTS_SUPPORT)
+        getOrCreateTagBuilder(TaglightingBlockTags.SUPPORTS_NYLIUM_PLANTS)
             .forceAddTag(BlockTags.NYLIUM)
             .add(Blocks.SOUL_SOIL)
             .forceAddTag(BlockTags.DIRT)
             .add(Blocks.FARMLAND)
+    }
 
-        getOrCreateTagBuilder(TaglightingBlockTags.PORTAL_BLOCKS)
-            .add(Blocks.OBSIDIAN)
-            .add(Blocks.CRYING_OBSIDIAN)
+    private fun supportsSpecial() {
+        getOrCreateTagBuilder(TaglightingBlockTags.SUPPORTS_SMALL_TOP)
+            .forceAddTag(BlockTags.FENCES)
+            .forceAddTag(BlockTags.WALLS)
 
-        // Vanilla Tags
+        getOrCreateTagBuilder(TaglightingBlockTags.SUPPORTS_SMALL_BOTTOM)
+            .forceAddTag(BlockTags.FENCES)
+            .forceAddTag(BlockTags.WALLS)
+
         getOrCreateTagBuilder(BlockTags.WALL_POST_OVERRIDE)
             .forceAddTag(BlockTags.BUTTONS)
             .add(Blocks.LEVER)
-
     }
 }

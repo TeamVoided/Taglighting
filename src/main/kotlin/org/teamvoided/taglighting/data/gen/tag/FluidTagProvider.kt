@@ -9,7 +9,7 @@ import org.teamvoided.taglighting.misc.Pack
 
 class FluidTagProvider(o: Pack, r: FutureProvider) : FluidTagProvider(o, r) {
     override fun configure(arg: HolderLookup.Provider) {
-        getOrCreateTagBuilder(TaglightingFluidTags.CANE_HYDRATION)
+        getOrCreateTagBuilder(TaglightingFluidTags.SUGAR_CANE_HYDRATION)
             .forceAddTag(FluidTags.WATER)
     }
 }

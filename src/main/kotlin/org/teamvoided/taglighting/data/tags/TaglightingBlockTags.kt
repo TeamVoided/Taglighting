@@ -5,34 +5,42 @@ import org.teamvoided.taglighting.Taglighting.id
 import org.teamvoided.taglighting.misc.tag
 
 object TaglightingBlockTags {
-
     @JvmField
-    val CANE_HYDRATION = create("cane_hydration")
+    val SUGAR_CANE_HYDRATION = create("sugar_cane_hydration")
 
     @JvmField
     val ENDERMAN_PLACEABLE = create("enderman_placeable")
 
     @JvmField
-    val SUPPORT_SMALL_TOP = support("small/top")
+    val NETHER_PORTAL_FRAME = create("nether_portal_frame")
+
+    // Supports
     @JvmField
-    val SUPPORT_SMALL_BOTTOM = support("small/bottom")
+    val SUPPORTS_SUGAR_CANE = supports("sugar_cane")
 
     @JvmField
-    val CANE_SUPPORT = support("cane")
-    @JvmField
-    val WITHER_ROSE_SUPPORT = support("wither_rose")
-    @JvmField
-    val CACTUS_SUPPORT = support("cactus")
-    @JvmField
-    val NETHER_WART_SUPPORT = support("nether_wart")
+    val SUPPORTS_WITHER_ROSE = supports("wither_rose")
 
     @JvmField
-    val NYLIUM_PLANTS_SUPPORT = support("nylium_plants")
+    val SUPPORTS_CACTUS = supports("cactus")
 
     @JvmField
-    val PORTAL_BLOCKS = create("portal_blocks")
+    val SUPPORTS_NETHER_WART = supports("nether_wart")
 
+    @JvmField
+    val SUPPORTS_NYLIUM_PLANTS = supports("nylium_plants")
 
+    // Special Support
+    @JvmField
+    val SUPPORTS_SMALL_TOP = supports("small/top")
+
+    @JvmField
+    val SUPPORTS_SMALL_BOTTOM = supports("small/bottom")
+
+    @JvmField
+    val SUPPORTS_SMALL_SIDES = supports("small/sides")
+
+    // functions
     private fun create(id: String) = RegistryKeys.BLOCK.tag(id(id))
-    private fun support(id: String) = create("support/$id")
+    private fun supports(id: String) = create("supports/$id")
 }

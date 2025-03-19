@@ -31,12 +31,13 @@ println("Task: " + gradle.startParameter.taskNames.joinToString(","))
 
 modSettings {
     entrypoint("main", "org.teamvoided.taglighting.Taglighting::init")
-//    entrypoint("client", "org.teamvoided.taglighting.TaglightingClient::init")
     entrypoint("fabric-datagen", "org.teamvoided.taglighting.data.gen.TaglightingData")
 
-    mixinFile("${modId()}.client.mixins.json")
-//    mixinFile("${modId()}.mixins.json")
-//    accessWidener("${modId()}.accesswidener")
+    mixinFile("${modId()}.mixins.json")
+    accessWidener("${modId()}.accesswidener")
+
+//    entrypoint("client", "org.teamvoided.taglighting.TaglightingClient::init")
+//    mixinFile("${modId()}.client.mixins.json")
 }
 
 dependencies {

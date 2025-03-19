@@ -6,8 +6,6 @@ import org.teamvoided.taglighting.misc.tag
 
 object TaglightingFluidTags {
     @JvmField
-    val CANE_HYDRATION = create("cane_hydration")
-
-
+    val SUGAR_CANE_HYDRATION = create("sugar_cane_hydration")
     private fun create(id: String) = RegistryKeys.FLUID.tag(id(id))
 }
