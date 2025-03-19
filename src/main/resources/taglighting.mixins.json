@@ -13,7 +13,8 @@
     "suports.NyliumPlantBlockMixin",
     "EndermanPlaceBlockMixin",
     "suports.special.WallMountedBlockMixin",
-    "piston.PistonBlockMixin"
+    "piston.PistonBlockMixin",
+    "suports.CocoaBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1

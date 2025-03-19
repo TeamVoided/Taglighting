@@ -55,6 +55,9 @@ class BlockTagProvider(o: Pack, r: FutureProvider) : BlockTagProvider(o, r) {
             .add(SOUL_SOIL)
             .forceAddTag(BlockTags.DIRT)
             .add(FARMLAND)
+
+        getOrCreateTagBuilder(Tags.SUPPORTS_COCOA)
+            .forceAddTag(BlockTags.JUNGLE_LOGS)
     }
 
     private fun supportsSpecial() {

@@ -37,6 +37,9 @@ object TaglightingBlockTags {
     @JvmField
     val SUPPORTS_NYLIUM_PLANTS = supports("nylium_plants")
 
+    @JvmField
+    val SUPPORTS_COCOA = supports("cocoa")
+
     // Special Support
     @JvmField
     val SUPPORTS_SMALL_TOP = supports("small/top")
