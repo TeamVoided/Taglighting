@@ -14,7 +14,8 @@
     "EndermanPlaceBlockMixin",
     "suports.special.WallMountedBlockMixin",
     "piston.PistonBlockMixin",
-    "suports.CocoaBlockMixin"
+    "suports.CocoaBlockMixin",
+    "suports.EndCrystalItemMixin"
   ],
   "injectors": {
     "defaultRequire": 1

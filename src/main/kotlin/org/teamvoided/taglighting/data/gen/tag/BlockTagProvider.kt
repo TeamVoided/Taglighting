@@ -58,6 +58,10 @@ class BlockTagProvider(o: Pack, r: FutureProvider) : BlockTagProvider(o, r) {
 
         getOrCreateTagBuilder(Tags.SUPPORTS_COCOA)
             .forceAddTag(BlockTags.JUNGLE_LOGS)
+
+        getOrCreateTagBuilder(Tags.SUPPORTS_END_CRYSTAL)
+            .add(OBSIDIAN)
+            .add(BEDROCK)
     }
 
     private fun supportsSpecial() {
@@ -78,5 +82,4 @@ class BlockTagProvider(o: Pack, r: FutureProvider) : BlockTagProvider(o, r) {
     private fun testing() = ALL_TAGS.forEach {
         getOrCreateTagBuilder(it).add(DIAMOND_BLOCK, NETHERITE_BLOCK, GOLD_BLOCK, EMERALD_BLOCK)
     }
-
 }
