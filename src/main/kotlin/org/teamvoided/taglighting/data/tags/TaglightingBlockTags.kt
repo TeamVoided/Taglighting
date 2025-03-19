@@ -18,6 +18,9 @@ object TaglightingBlockTags {
     @JvmField
     val NETHER_PORTAL_FRAME = create("nether_portal_frame")
 
+    @JvmField
+    val PISTON_IMMOVABLE = create("piston_immovable")
+
     // Supports
     @JvmField
     val SUPPORTS_SUGAR_CANE = supports("sugar_cane")

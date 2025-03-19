@@ -15,7 +15,7 @@ import org.teamvoided.taglighting.data.tags.TaglightingFluidTags;
 @Mixin(SugarCaneBlock.class)
 abstract class SugarCaneBlockMixin {
     @Redirect(method = "canPlaceAt", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockState;isIn(Lnet/minecraft/registry/tag/TagKey;)Z", ordinal = 0))
-    private boolean placementOnCheck(BlockState state, TagKey<Block> _tag) {
+    private boolean tagPlacementCheck(BlockState state, TagKey<Block> _tag) {
         return state.isIn(TaglightingBlockTags.SUPPORTS_SUGAR_CANE);
     }
 
@@ -30,7 +30,7 @@ abstract class SugarCaneBlockMixin {
     }
 
     @Redirect(method = "canPlaceAt", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockState;isOf(Lnet/minecraft/block/Block;)Z", ordinal = 1))
-    private boolean placementOnCheck(BlockState state, Block _block) {
+    private boolean hydrationBlockCheck(BlockState state, Block _block) {
         return state.isIn(TaglightingBlockTags.SUGAR_CANE_HYDRATION);
     }
 }

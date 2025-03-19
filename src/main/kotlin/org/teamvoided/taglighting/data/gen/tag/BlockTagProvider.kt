@@ -21,8 +21,15 @@ class BlockTagProvider(o: Pack, r: FutureProvider) : BlockTagProvider(o, r) {
         getOrCreateTagBuilder(Tags.NETHER_PORTAL_FRAME)
             .add(OBSIDIAN)
 
+        getOrCreateTagBuilder(Tags.PISTON_IMMOVABLE)
+            .add(OBSIDIAN)
+            .add(CRYING_OBSIDIAN)
+            .add(RESPAWN_ANCHOR)
+            .add(REINFORCED_DEEPSLATE)
+
         supports()
         supportsSpecial()
+//        testing()
     }
 
     private fun supports() {
