@@ -1,2 +1,2 @@
-# The TeamVoided Template
-Template mod by TeamVoided
+# Taglighting
+Finally feature X is now a tag instead of beeing a random hardcoded thing. Yipeee! 
