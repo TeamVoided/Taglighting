@@ -4,20 +4,21 @@
   "package": "org.teamvoided.taglighting.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "piston.PistonBlockMixin",
+    "EndermanPlaceBlockMixin",
+    "SpawnGolemMixin",
     "piston.PistonBlockEntityMixin",
+    "piston.PistonBlockMixin",
     "piston.PistonHandlerMixin",
     "portal.AbstractFireBlockMixin",
     "portal.AreaHelperMixin",
-    "suports.WitherRoseBlockMixin",
-    "suports.NetherWartBlockMixin",
     "suports.CactusBlockMixin",
-    "suports.SugarCaneBlockMixin",
-    "suports.NyliumPlantBlockMixin",
-    "suports.special.WallMountedBlockMixin",
     "suports.CocoaBlockMixin",
     "suports.EndCrystalItemMixin",
-    "EndermanPlaceBlockMixin"
+    "suports.NetherWartBlockMixin",
+    "suports.NyliumPlantBlockMixin",
+    "suports.SugarCaneBlockMixin",
+    "suports.WitherRoseBlockMixin",
+    "suports.special.WallMountedBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1

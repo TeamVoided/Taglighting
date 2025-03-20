@@ -27,6 +27,12 @@ object TaglightingBlockTags {
     @JvmField
     val MOB_MOVING_STICKY_BLOCK = create("mob_moving_sticky_block")
 
+    @JvmField
+    val SNOW_GOLEM_BASE = create("snow_golem_base")
+
+    @JvmField
+    val IRON_GOLEM_BASE = create("iron_golem_base")
+
     // Supports
     @JvmField
     val SUPPORTS_SUGAR_CANE = supports("sugar_cane")

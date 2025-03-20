@@ -34,6 +34,12 @@ class BlockTagProvider(o: Pack, r: FutureProvider) : BlockTagProvider(o, r) {
         getOrCreateTagBuilder(Tags.MOB_MOVING_STICKY_BLOCK)
             .add(HONEY_BLOCK)
 
+        getOrCreateTagBuilder(Tags.SNOW_GOLEM_BASE)
+            .add(SNOW_BLOCK)
+
+        getOrCreateTagBuilder(Tags.IRON_GOLEM_BASE)
+            .add(IRON_BLOCK)
+
         supports()
         supportsSpecial()
 //        testing()
