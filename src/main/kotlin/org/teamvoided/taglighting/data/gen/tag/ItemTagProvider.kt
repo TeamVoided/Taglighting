@@ -14,5 +14,6 @@ class ItemTagProvider(o: Pack, r: FutureProvider, blockTags: BlockTagProvider) :
 //        testing()
     }
 
+    @Suppress("unused")
     private fun testing() = ALL_TAGS.forEach { getOrCreateTagBuilder(it).add(Items.NETHERITE_INGOT) }
 }

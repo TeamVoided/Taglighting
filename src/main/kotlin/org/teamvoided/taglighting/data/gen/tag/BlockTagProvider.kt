@@ -92,6 +92,7 @@ class BlockTagProvider(o: Pack, r: FutureProvider) : BlockTagProvider(o, r) {
     }
 
 
+    @Suppress("unused")
     private fun testing() = ALL_TAGS.filter { it != Tags.PISTON_IMMOVABLE }.forEach {
         getOrCreateTagBuilder(it).add(DIAMOND_BLOCK, NETHERITE_BLOCK, GOLD_BLOCK, EMERALD_BLOCK)
     }
