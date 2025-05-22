@@ -7,7 +7,7 @@ modmenu = "11.0.3"
 emi = "1.1.20+1.21.1"
 
 # Testing
-creative-works = "0.3.0"
+creative-works = "0.4.0"
 imguimc = "1.21.1-1.0.8"
 
 [libraries]

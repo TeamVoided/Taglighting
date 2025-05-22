@@ -23,6 +23,7 @@ repositories {
     maven("https://teamvoided.org/releases")
     maven("https://teamvoided.org/snapshots")
     maven("https://maven.terraformersmc.com/") { name = "Terraformers" }
+    maven("https://maven.fzzyhmstrs.me/") { name = "FzzyMaven" }
     maven("https://api.modrinth.com/maven")
     mavenCentral()
 }
