@@ -1,4 +1,4 @@
-package org.teamvoided.taglighting.mixin;
+package org.teamvoided.taglighting.mixin.golem;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import net.minecraft.block.CarvedPumpkinBlock;

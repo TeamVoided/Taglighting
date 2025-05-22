@@ -5,7 +5,8 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "EndermanPlaceBlockMixin",
-    "SpawnGolemMixin",
+    "golem.IronGolemEntityMixin",
+    "golem.SpawnGolemMixin",
     "piston.PistonBlockEntityMixin",
     "piston.PistonBlockMixin",
     "piston.PistonHandlerMixin",
