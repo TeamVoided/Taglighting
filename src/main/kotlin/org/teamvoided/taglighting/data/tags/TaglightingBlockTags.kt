@@ -33,6 +33,9 @@ object TaglightingBlockTags {
     @JvmField
     val IRON_GOLEM_BASE = create("iron_golem_base")
 
+    @JvmField
+    val CANNOT_CONNECT_TO = create("cannot_connect_to")
+
     // Supports
     @JvmField
     val SUPPORTS_SUGAR_CANE = supports("sugar_cane")

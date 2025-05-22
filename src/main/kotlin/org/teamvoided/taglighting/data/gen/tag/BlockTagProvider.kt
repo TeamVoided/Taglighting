@@ -4,10 +4,10 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider.BlockTagPro
 import net.minecraft.block.Blocks.*
 import net.minecraft.registry.HolderLookup
 import net.minecraft.registry.tag.BlockTags
+import org.teamvoided.taglighting.data.tags.TaglightingBlockTags.ALL_TAGS
 import org.teamvoided.taglighting.misc.FutureProvider
 import org.teamvoided.taglighting.misc.Pack
 import org.teamvoided.taglighting.data.tags.TaglightingBlockTags as Tags
-import org.teamvoided.taglighting.data.tags.TaglightingBlockTags.ALL_TAGS
 
 class BlockTagProvider(o: Pack, r: FutureProvider) : BlockTagProvider(o, r) {
     override fun configure(provider: HolderLookup.Provider) {
@@ -39,6 +39,11 @@ class BlockTagProvider(o: Pack, r: FutureProvider) : BlockTagProvider(o, r) {
 
         getOrCreateTagBuilder(Tags.IRON_GOLEM_BASE)
             .add(IRON_BLOCK)
+
+        getOrCreateTagBuilder(Tags.CANNOT_CONNECT_TO)
+            .forceAddTag(BlockTags.LEAVES)
+            .forceAddTag(BlockTags.SHULKER_BOXES)
+            .add(BARRIER, CARVED_PUMPKIN, JACK_O_LANTERN, MELON, PUMPKIN)
 
         supports()
         supportsSpecial()
