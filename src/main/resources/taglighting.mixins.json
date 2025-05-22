@@ -6,6 +6,7 @@
   "mixins": [
     "BlockMixin",
     "EndermanPlaceBlockMixin",
+    "PotionItemMixin",
     "golem.IronGolemEntityMixin",
     "golem.SpawnGolemMixin",
     "piston.PistonBlockEntityMixin",

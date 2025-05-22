@@ -21,6 +21,7 @@ object TaglightingData : DataGeneratorEntrypoint {
         pack.addProvider { o, r -> ItemTagProvider(o, r, blockTags) }
         pack.addProvider(::FluidTagProvider)
         pack.addProvider(::StructureTagProvider)
+        pack.addProvider(::PotionTagProvider)
         // Assets
         pack.addProvider(::LangProvider)
     }
