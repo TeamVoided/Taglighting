@@ -4,10 +4,10 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider.FluidTagPro
 import net.minecraft.registry.HolderLookup
 import net.minecraft.registry.tag.FluidTags
 import org.teamvoided.taglighting.data.tags.TaglightingFluidTags
-import org.teamvoided.taglighting.misc.FutureProvider
-import org.teamvoided.taglighting.misc.Pack
+import org.teamvoided.devin.FutureLookup
+import org.teamvoided.devin.FDOut
 
-class FluidTagProvider(o: Pack, r: FutureProvider) : FluidTagProvider(o, r) {
+class FluidTagProvider(o: FDOut, r: FutureLookup) : FluidTagProvider(o, r) {
     override fun configure(arg: HolderLookup.Provider) {
         getOrCreateTagBuilder(TaglightingFluidTags.SUGAR_CANE_HYDRATION)
             .forceAddTag(FluidTags.WATER)

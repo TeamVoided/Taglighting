@@ -5,12 +5,12 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider
 import net.minecraft.registry.HolderLookup
 import net.minecraft.registry.RegistrySetBuilder
+import org.teamvoided.devin.FDOut
+import org.teamvoided.devin.FutureLookup
 import org.teamvoided.taglighting.Taglighting.log
 import org.teamvoided.taglighting.data.gen.tag.*
 import org.teamvoided.taglighting.data.tags.TaglightingFluidTags
 import org.teamvoided.taglighting.data.tags.TaglightingItemTags
-import org.teamvoided.taglighting.misc.FutureProvider
-import org.teamvoided.taglighting.misc.Pack
 
 @Suppress("unused")
 object TaglightingData : DataGeneratorEntrypoint {
@@ -31,7 +31,7 @@ object TaglightingData : DataGeneratorEntrypoint {
 //        gen.add(RegistryKeys.BIOME, TemplateBiomes::boostrap)
     }
 
-    class LangProvider(o: Pack, r: FutureProvider) : FabricLanguageProvider(o, r) {
+    class LangProvider(o: FDOut, r: FutureLookup) : FabricLanguageProvider(o, r) {
         override fun generateTranslations(prov: HolderLookup.Provider, gen: TranslationBuilder) {
             gen.add(TaglightingFluidTags.SUGAR_CANE_HYDRATION, "Sugar Cane Hydration")
             gen.add(TaglightingItemTags.IRON_GOLEM_REPAIR_MATERIALS, "Iron Golem Repair Materials")

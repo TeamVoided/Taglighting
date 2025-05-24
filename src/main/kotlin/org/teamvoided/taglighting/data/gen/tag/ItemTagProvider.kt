@@ -5,10 +5,10 @@ import net.minecraft.item.Items
 import net.minecraft.registry.HolderLookup
 import org.teamvoided.taglighting.data.tags.TaglightingItemTags.ALL_TAGS
 import org.teamvoided.taglighting.data.tags.TaglightingItemTags.IRON_GOLEM_REPAIR_MATERIALS
-import org.teamvoided.taglighting.misc.FutureProvider
-import org.teamvoided.taglighting.misc.Pack
+import org.teamvoided.devin.FutureLookup
+import org.teamvoided.devin.FDOut
 
-class ItemTagProvider(o: Pack, r: FutureProvider, blockTags: BlockTagProvider) : ItemTagProvider(o, r, blockTags) {
+class ItemTagProvider(o: FDOut, r: FutureLookup, blockTags: BlockTagProvider) : ItemTagProvider(o, r, blockTags) {
     override fun configure(arg: HolderLookup.Provider) {
         getOrCreateTagBuilder(IRON_GOLEM_REPAIR_MATERIALS).add(Items.IRON_INGOT)
 //        testing()

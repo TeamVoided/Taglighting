@@ -6,11 +6,11 @@ import net.minecraft.potion.Potions
 import net.minecraft.registry.HolderLookup
 import net.minecraft.registry.RegistryKeys.POTION
 import org.teamvoided.taglighting.data.tags.TaglightingPotionTags.MAKES_MUD
-import org.teamvoided.taglighting.misc.FutureProvider
-import org.teamvoided.taglighting.misc.Pack
-import org.teamvoided.taglighting.misc.add
+import org.teamvoided.devin.FutureLookup
+import org.teamvoided.devin.FDOut
+import org.teamvoided.devin.tag.add
 
-class PotionTagProvider(o: Pack, r: FutureProvider) : FabricTagProvider<Potion>(o, POTION, r) {
+class PotionTagProvider(o: FDOut, r: FutureLookup) : FabricTagProvider<Potion>(o, POTION, r) {
     override fun configure(arg: HolderLookup.Provider) {
         getOrCreateTagBuilder(MAKES_MUD).add(Potions.WATER)
     }

@@ -5,11 +5,11 @@ import net.minecraft.block.Blocks.*
 import net.minecraft.registry.HolderLookup
 import net.minecraft.registry.tag.BlockTags
 import org.teamvoided.taglighting.data.tags.TaglightingBlockTags.ALL_TAGS
-import org.teamvoided.taglighting.misc.FutureProvider
-import org.teamvoided.taglighting.misc.Pack
 import org.teamvoided.taglighting.data.tags.TaglightingBlockTags as Tags
+import org.teamvoided.devin.FDOut
+import org.teamvoided.devin.FutureLookup
 
-class BlockTagProvider(o: Pack, r: FutureProvider) : BlockTagProvider(o, r) {
+class BlockTagProvider(o: FDOut, r: FutureLookup) : BlockTagProvider(o, r) {
     override fun configure(provider: HolderLookup.Provider) {
         getOrCreateTagBuilder(Tags.SUGAR_CANE_HYDRATION)
             .add(ICE)
