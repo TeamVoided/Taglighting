@@ -12,14 +12,12 @@ import net.minecraft.registry.tag.TagKey
 import net.minecraft.util.Identifier
 import java.util.concurrent.CompletableFuture
 
+fun <T> RegistryKey<Registry<T>>.tag(id: Identifier): TagKey<T> = TagKey.of<T>(this, id)
 
+
+// Import from devin
 typealias Pack = FabricDataOutput
 typealias FutureProvider = CompletableFuture<HolderLookup.Provider>
-
-
-fun <T, Y : Registry<T>> RegistryKey<Y>.key(id: Identifier): RegistryKey<T> = RegistryKey.of(this, id)
-fun <T, Y : Registry<T>> RegistryKey<Y>.tag(id: Identifier): TagKey<T> = TagKey.of(this, id)
-
 
 fun <T> FabricTagProvider<T>.FabricTagBuilder.add(holder: Holder<T>): FabricTagProvider<T>.FabricTagBuilder {
     this.add(holder.value())

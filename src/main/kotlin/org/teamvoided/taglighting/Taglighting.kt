@@ -15,5 +15,5 @@ object Taglighting {
         log.info("Hello from Common")
     }
 
-    fun id(path: String) = Identifier.of(MODID, path)
+    fun id(path: String): Identifier = Identifier.of(MODID, path)
 }

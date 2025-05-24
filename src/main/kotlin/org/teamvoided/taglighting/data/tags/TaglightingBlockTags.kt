@@ -58,15 +58,7 @@ object TaglightingBlockTags {
     @JvmField
     val SUPPORTS_END_CRYSTAL = supports("end_crystal")
 
-    // Special Support
-    @JvmField
-    val SUPPORTS_SMALL_TOP = supports("small/top")
 
-    @JvmField
-    val SUPPORTS_SMALL_BOTTOM = supports("small/bottom")
-
-    @JvmField
-    val SUPPORTS_SMALL_SIDES = supports("small/sides")
 
     // functions
     private fun create(id: String): TagKey<Block> {

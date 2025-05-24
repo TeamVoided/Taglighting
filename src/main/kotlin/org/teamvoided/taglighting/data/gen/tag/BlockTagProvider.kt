@@ -46,7 +46,6 @@ class BlockTagProvider(o: Pack, r: FutureProvider) : BlockTagProvider(o, r) {
             .add(BARRIER, CARVED_PUMPKIN, JACK_O_LANTERN, MELON, PUMPKIN)
 
         supports()
-        supportsSpecial()
 //        testing()
     }
 
@@ -81,21 +80,6 @@ class BlockTagProvider(o: Pack, r: FutureProvider) : BlockTagProvider(o, r) {
             .add(OBSIDIAN)
             .add(BEDROCK)
     }
-
-    private fun supportsSpecial() {
-        getOrCreateTagBuilder(Tags.SUPPORTS_SMALL_TOP)
-            .forceAddTag(BlockTags.FENCES)
-            .forceAddTag(BlockTags.WALLS)
-
-        getOrCreateTagBuilder(Tags.SUPPORTS_SMALL_BOTTOM)
-            .forceAddTag(BlockTags.FENCES)
-            .forceAddTag(BlockTags.WALLS)
-
-        getOrCreateTagBuilder(BlockTags.WALL_POST_OVERRIDE)
-            .forceAddTag(BlockTags.BUTTONS)
-            .add(LEVER)
-    }
-
 
     @Suppress("unused")
     private fun testing() = ALL_TAGS.filter { it != Tags.PISTON_IMMOVABLE }.forEach {
