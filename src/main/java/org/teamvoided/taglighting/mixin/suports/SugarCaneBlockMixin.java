@@ -5,6 +5,9 @@ import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SugarCaneBlock;
 import net.minecraft.fluid.FluidState;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
+import net.minecraft.world.WorldView;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.teamvoided.taglighting.data.tags.TaglightingBlockTags;
@@ -28,7 +31,7 @@ abstract class SugarCaneBlockMixin {
     }
 
     @ModifyExpressionValue(method = "canPlaceAt", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/BlockState;isOf(Lnet/minecraft/block/Block;)Z", ordinal = 1))
-    private boolean hydrationBlockCheck(boolean original, @Local(ordinal = 2) BlockState state) {
-        return state.isIn(TaglightingBlockTags.SUGAR_CANE_HYDRATION);
+    private boolean hydrationBlockCheck(boolean original, BlockState state, WorldView world, @Local(ordinal = 1) BlockPos blockPos, @Local Direction dir) {
+        return world.getBlockState(blockPos.offset(dir)).isIn(TaglightingBlockTags.SUGAR_CANE_HYDRATION);
     }
 }
