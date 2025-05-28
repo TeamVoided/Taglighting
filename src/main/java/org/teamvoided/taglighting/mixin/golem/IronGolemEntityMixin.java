@@ -12,8 +12,8 @@ import static org.teamvoided.taglighting.data.tags.TaglightingItemTags.IRON_GOLE
 @Mixin(IronGolemEntity.class)
 public class IronGolemEntityMixin {
 
-    @ModifyExpressionValue(method = "interactMob", at= @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;isOf(Lnet/minecraft/item/Item;)Z"))
-    boolean changeRepairMaterial(boolean original, @Local ItemStack stack){
+    @ModifyExpressionValue(method = "interactMob", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;isOf(Lnet/minecraft/item/Item;)Z"))
+    boolean changeRepairMaterial(boolean original, @Local ItemStack stack) {
         return stack.isIn(IRON_GOLEM_REPAIR_MATERIALS);
     }
 }

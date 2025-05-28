@@ -6,7 +6,11 @@
   "mixins": [
     "BlockMixin",
     "EndermanPlaceBlockMixin",
+    "JohnnyTargetGoalMixin",
     "PotionItemMixin",
+    "VindicatorEntityAccessor",
+    "WardenEntityMixin",
+    "ZoglinEntityMixin",
     "golem.IronGolemEntityMixin",
     "golem.SpawnGolemMixin",
     "piston.PistonBlockEntityMixin",
@@ -20,8 +24,7 @@
     "suports.NetherWartBlockMixin",
     "suports.NyliumPlantBlockMixin",
     "suports.SugarCaneBlockMixin",
-    "suports.WitherRoseBlockMixin",
-    "suports.special.WallMountedBlockMixin"
+    "suports.WitherRoseBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1

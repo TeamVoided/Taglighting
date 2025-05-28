@@ -20,8 +20,9 @@ object TaglightingData : DataGeneratorEntrypoint {
 
         val blockTags = pack.addProvider(::BlockTagProvider)
         pack.addProvider { o, r -> ItemTagProvider(o, r, blockTags) }
+        pack.addProvider(::EntityTagProvider)
         pack.addProvider(::FluidTagProvider)
-        pack.addProvider(::StructureTagProvider)
+//        pack.addProvider(::StructureTagProvider)
         pack.addProvider(::PotionTagProvider)
         // Assets
         pack.addProvider(::LangProvider)
