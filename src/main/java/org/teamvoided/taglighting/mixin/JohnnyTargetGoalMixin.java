@@ -1,25 +1,26 @@
 package org.teamvoided.taglighting.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
-import net.minecraft.entity.ai.TargetPredicate;
-import net.minecraft.entity.ai.goal.TargetGoal;
-import net.minecraft.entity.ai.goal.TrackTargetGoal;
-import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.TargetGoal;
+import net.minecraft.world.entity.ai.targeting.TargetingConditions;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
 import static org.teamvoided.taglighting.data.tags.TaglightingEntitiesTags.JOHNNY_UNTARGETABLE;
 
-@Mixin(TargetGoal.class)
-public abstract class JohnnyTargetGoalMixin extends TrackTargetGoal {
-    public JohnnyTargetGoalMixin(MobEntity mob, boolean checkVisibility) {
-        super(mob, checkVisibility);
+@Mixin(NearestAttackableTargetGoal.class)
+public abstract class JohnnyTargetGoalMixin extends TargetGoal {
+
+    public JohnnyTargetGoalMixin(Mob mob, boolean bl) {
+        super(mob, bl);
     }
 
-    @ModifyExpressionValue(method = "findClosestTarget", at = @At(value = "FIELD", target = "Lnet/minecraft/entity/ai/goal/TargetGoal;targetPredicate:Lnet/minecraft/entity/ai/TargetPredicate;"))
-    private TargetPredicate makeUntargetable(TargetPredicate original) {
-        if (this.mob instanceof VindicatorEntityAccessor vindicator && vindicator.taglighting_johnny()) {
-            return TargetPredicate.createAttackable().setBaseMaxDistance(this.getFollowRange()).setPredicate(living -> !living.getType().isIn(JOHNNY_UNTARGETABLE));
+    @ModifyExpressionValue(method = "findTarget", at = @At(value = "FIELD", target = "Lnet/minecraft/world/entity/ai/goal/target/NearestAttackableTargetGoal;targetConditions:Lnet/minecraft/world/entity/ai/targeting/TargetingConditions;"))
+    private TargetingConditions makeUntargetable(TargetingConditions original) {
+        if (this.mob instanceof VindicatorAccessor vindicator && vindicator.taglighting_isJohnny()) {
+            return original.copy().selector(living -> !living.getType().is(JOHNNY_UNTARGETABLE));
         }
         return original;
     }

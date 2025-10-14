@@ -1,8 +1,8 @@
 package org.teamvoided.taglighting.data.gen.tag
 
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider
-import net.minecraft.entity.EntityType.*
-import net.minecraft.registry.HolderLookup
+import net.minecraft.core.HolderLookup
+import net.minecraft.world.entity.EntityType.*
 import org.teamvoided.devin.FDOut
 import org.teamvoided.devin.FutureLookup
 import org.teamvoided.taglighting.data.tags.TaglightingEntitiesTags.JOHNNY_UNTARGETABLE
@@ -11,7 +11,7 @@ import org.teamvoided.taglighting.data.tags.TaglightingEntitiesTags.WARDEN_UNTAR
 import org.teamvoided.taglighting.data.tags.TaglightingEntitiesTags.ZOGLIN_UNTARGETABLE
 
 class EntityTagProvider(o: FDOut, r: FutureLookup) : FabricTagProvider.EntityTypeTagProvider(o, r) {
-    override fun configure(arg: HolderLookup.Provider) {
+    override fun addTags(arg: HolderLookup.Provider) {
         getOrCreateTagBuilder(UNTARGETABLE)
             .add(ARMOR_STAND)
         getOrCreateTagBuilder(WARDEN_UNTARGETABLE)

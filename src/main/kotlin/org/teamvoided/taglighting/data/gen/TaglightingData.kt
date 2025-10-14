@@ -3,8 +3,8 @@ package org.teamvoided.taglighting.data.gen
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider
-import net.minecraft.registry.HolderLookup
-import net.minecraft.registry.RegistrySetBuilder
+import net.minecraft.core.HolderLookup
+import net.minecraft.core.RegistrySetBuilder
 import org.teamvoided.devin.FDOut
 import org.teamvoided.devin.FutureLookup
 import org.teamvoided.taglighting.Taglighting.log

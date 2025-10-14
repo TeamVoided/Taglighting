@@ -1,16 +1,17 @@
 package org.teamvoided.taglighting.data.gen.tag
 
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider.BlockTagProvider
-import net.minecraft.block.Blocks.*
-import net.minecraft.registry.HolderLookup
-import net.minecraft.registry.tag.BlockTags
-import org.teamvoided.taglighting.data.tags.TaglightingBlockTags.ALL_TAGS
-import org.teamvoided.taglighting.data.tags.TaglightingBlockTags as Tags
+import net.minecraft.core.HolderLookup
+import net.minecraft.tags.BlockTags
+import net.minecraft.world.level.block.Blocks.*
 import org.teamvoided.devin.FDOut
 import org.teamvoided.devin.FutureLookup
+import org.teamvoided.taglighting.data.tags.TaglightingBlockTags.ALL_TAGS
+import org.teamvoided.taglighting.data.tags.TaglightingBlockTags as Tags
 
 class BlockTagProvider(o: FDOut, r: FutureLookup) : BlockTagProvider(o, r) {
-    override fun configure(provider: HolderLookup.Provider) {
+
+    override fun addTags(provider: HolderLookup.Provider) {
         getOrCreateTagBuilder(Tags.SUGAR_CANE_HYDRATION)
             .add(ICE)
             .add(FROSTED_ICE)

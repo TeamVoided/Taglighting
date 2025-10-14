@@ -1,8 +1,8 @@
 package org.teamvoided.taglighting.data.tags
 
-import net.minecraft.block.Block
-import net.minecraft.registry.RegistryKeys
-import net.minecraft.registry.tag.TagKey
+import net.minecraft.core.registries.Registries
+import net.minecraft.tags.TagKey
+import net.minecraft.world.level.block.Block
 import org.teamvoided.taglighting.Taglighting.id
 import org.teamvoided.taglighting.misc.tag
 
@@ -62,7 +62,7 @@ object TaglightingBlockTags {
 
     // functions
     private fun create(id: String): TagKey<Block> {
-        val tag = RegistryKeys.BLOCK.tag(id(id))
+        val tag = Registries.BLOCK.tag(id(id))
         ALL_TAGS.add(tag)
         return tag
     }

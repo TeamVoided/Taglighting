@@ -1,8 +1,8 @@
 package org.teamvoided.taglighting.mixin.golem;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
-import net.minecraft.block.CarvedPumpkinBlock;
-import net.minecraft.block.pattern.CachedBlockPosition;
+import net.minecraft.world.level.block.CarvedPumpkinBlock;
+import net.minecraft.world.level.block.state.pattern.BlockInWorld;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
@@ -13,24 +13,24 @@ import static org.teamvoided.taglighting.data.tags.TaglightingBlockTags.SNOW_GOL
 
 @Mixin(CarvedPumpkinBlock.class)
 public class SpawnGolemMixin {
-    @ModifyExpressionValue(method = "getSnowGolemDispenserPattern", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/pattern/CachedBlockPosition;matchesBlockState(Ljava/util/function/Predicate;)Ljava/util/function/Predicate;"))
-    Predicate<CachedBlockPosition> snowGolemDispenser(Predicate<CachedBlockPosition> original) {
-        return CachedBlockPosition.matchesBlockState((state) -> state.isIn(SNOW_GOLEM_BASE));
+    @ModifyExpressionValue(method = "getOrCreateSnowGolemBase", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/pattern/BlockInWorld;hasState(Ljava/util/function/Predicate;)Ljava/util/function/Predicate;"))
+    Predicate<BlockInWorld> snowGolemDispenser(Predicate<BlockInWorld> original) {
+        return BlockInWorld.hasState((state) -> state.is(SNOW_GOLEM_BASE));
     }
 
-    @ModifyExpressionValue(method = "getSnowGolemPattern", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/pattern/CachedBlockPosition;matchesBlockState(Ljava/util/function/Predicate;)Ljava/util/function/Predicate;", ordinal = 1))
-    Predicate<CachedBlockPosition> snowGolem(Predicate<CachedBlockPosition> original) {
-        return CachedBlockPosition.matchesBlockState((state) -> state.isIn(SNOW_GOLEM_BASE));
+    @ModifyExpressionValue(method = "getOrCreateSnowGolemFull", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/pattern/BlockInWorld;hasState(Ljava/util/function/Predicate;)Ljava/util/function/Predicate;", ordinal = 1))
+    Predicate<BlockInWorld> snowGolem(Predicate<BlockInWorld> original) {
+        return BlockInWorld.hasState((state) -> state.is(SNOW_GOLEM_BASE));
     }
 
-    @ModifyExpressionValue(method = "getIronGolemDispenserPattern", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/pattern/CachedBlockPosition;matchesBlockState(Ljava/util/function/Predicate;)Ljava/util/function/Predicate;"))
-    Predicate<CachedBlockPosition> ironGolemDispenser(Predicate<CachedBlockPosition> original) {
-        return CachedBlockPosition.matchesBlockState((state) -> state.isIn(IRON_GOLEM_BASE));
+    @ModifyExpressionValue(method = "getOrCreateIronGolemBase", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/pattern/BlockInWorld;hasState(Ljava/util/function/Predicate;)Ljava/util/function/Predicate;"))
+    Predicate<BlockInWorld> ironGolemDispenser(Predicate<BlockInWorld> original) {
+        return BlockInWorld.hasState((state) -> state.is(IRON_GOLEM_BASE));
     }
 
-    @ModifyExpressionValue(method = "getIronGolemPattern", at = @At(value = "INVOKE", target = "Lnet/minecraft/block/pattern/CachedBlockPosition;matchesBlockState(Ljava/util/function/Predicate;)Ljava/util/function/Predicate;", ordinal = 1))
-    Predicate<CachedBlockPosition> ironGolem(Predicate<CachedBlockPosition> original) {
-        return CachedBlockPosition.matchesBlockState((state) -> state.isIn(IRON_GOLEM_BASE));
+    @ModifyExpressionValue(method = "getOrCreateIronGolemFull", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/state/pattern/BlockInWorld;hasState(Ljava/util/function/Predicate;)Ljava/util/function/Predicate;", ordinal = 1))
+    Predicate<BlockInWorld> ironGolem(Predicate<BlockInWorld> original) {
+        return BlockInWorld.hasState((state) -> state.is(IRON_GOLEM_BASE));
     }
 
 }
