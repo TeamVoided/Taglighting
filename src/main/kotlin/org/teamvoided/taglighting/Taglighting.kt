@@ -12,7 +12,7 @@ object Taglighting {
     val log: Logger = LoggerFactory.getLogger(Taglighting::class.simpleName)
 
     fun init() {
-        log.info("Hello from Common")
+        log.info("Taglight, Tagkeep, Tagboss!")
     }
 
     fun id(path: String): ResourceLocation = ResourceLocation.fromNamespaceAndPath(MODID, path)

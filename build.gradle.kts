@@ -24,7 +24,7 @@ repositories {
 println("Task: " + gradle.startParameter.taskNames.joinToString(","))
 
 modSettings {
-    entrypoint("main", "org.teamvoided.taglighting.Taglighting::init")
+//    entrypoint("main", "org.teamvoided.taglighting.Taglighting::init")
     entrypoint("fabric-datagen", "org.teamvoided.taglighting.data.gen.TaglightingData")
 
     mixinFile("${modId()}.mixins.json")
@@ -110,8 +110,8 @@ publishScript {
 
 uploadConfig {
 //    debugMode = true
-    modrinthId = "x"
-    curseId = "0"
+    modrinthId = "2lLIdTOH"
+//    curseId = "0"
 
     // FabricApi
     modrinthDependency("P7dR8mSH", uploadConfig.REQUIRED)
