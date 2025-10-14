@@ -13,9 +13,9 @@ import org.teamvoided.taglighting.data.tags.TaglightingEntitiesTags.ZOGLIN_UNTAR
 class EntityTagProvider(o: FDOut, r: FutureLookup) : FabricTagProvider.EntityTypeTagProvider(o, r) {
     override fun addTags(arg: HolderLookup.Provider) {
         getOrCreateTagBuilder(UNTARGETABLE)
-            .add(ARMOR_STAND)
         getOrCreateTagBuilder(WARDEN_UNTARGETABLE)
             .forceAddTag(UNTARGETABLE)
+            .add(ARMOR_STAND)
             .add(WARDEN)
         getOrCreateTagBuilder(ZOGLIN_UNTARGETABLE)
             .forceAddTag(UNTARGETABLE)
