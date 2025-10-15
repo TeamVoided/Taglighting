@@ -53,6 +53,8 @@ datapacks.
 - `WARDEN_UNTARGETABLE` - Entities the Warden won't target [Default: "#taglighting:untargetable", Armor Stand, Warden ]
 - `ZOGLIN_UNTARGETABLE` - Entities the Zoglin won't target [Default: "#taglighting:untargetable", Zoglin, Creeper ]
 - `JOHNNY_UNTARGETABLE` - Entities a "Johnny" Vindicator won't target [Default: "#taglighting:untargetable" ]
+1.21.10 only:
+- `IS_NOT_ATTACKABLE` - Used in LivingEntity.attackable() [Default: "#taglighting:untargetable", Armor Stand ]
 
 [![Kinetic Partner Banner](https://raw.githubusercontent.com/theendercore/EndAssets/refs/heads/main/kinetic_banner.png)](https://billing.kinetichosting.net/aff.php?aff=853)
 
