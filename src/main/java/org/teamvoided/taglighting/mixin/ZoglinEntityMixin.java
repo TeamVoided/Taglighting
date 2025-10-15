@@ -2,6 +2,7 @@ package org.teamvoided.taglighting.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
+import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Zoglin;
@@ -14,7 +15,7 @@ import static org.teamvoided.taglighting.data.tags.TaglightingEntitiesTags.ZOGLI
 public class ZoglinEntityMixin {
 
     @ModifyReturnValue(method = "isTargetable", at = @At("RETURN"))
-    boolean makeUntargetable(boolean original, LivingEntity target) {
+    boolean makeUntargetable(boolean original, @Local(argsOnly = true) LivingEntity target) {
         if (target.getType().is(ZOGLIN_UNTARGETABLE)) {
             return false;
         }

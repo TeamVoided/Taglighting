@@ -1,9 +1,9 @@
 [versions]
 kotlin = "2.1.20"
-fabric-loom = "1.10-SNAPSHOT"
+fabric-loom = "1.11-SNAPSHOT"
 iridium = "3.5.0"
 # QoL
-modmenu = "11.0.3"
+modmenu = "16.0.0-rc.1"
 emi = "1.1.22+1.21.1"
 # Dev
 devin = "0.1.1"

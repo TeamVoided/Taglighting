@@ -10,10 +10,10 @@ import org.teamvoided.taglighting.data.tags.TaglightingItemTags.IRON_GOLEM_REPAI
 
 class ItemTagProvider(o: FDOut, r: FutureLookup, blockTags: BlockTagProvider) : ItemTagProvider(o, r, blockTags) {
     override fun addTags(arg: HolderLookup.Provider) {
-        getOrCreateTagBuilder(IRON_GOLEM_REPAIR_MATERIALS).add(Items.IRON_INGOT)
+        valueLookupBuilder(IRON_GOLEM_REPAIR_MATERIALS).add(Items.IRON_INGOT)
 //        testing()
     }
 
     @Suppress("unused")
-    private fun testing() = ALL_TAGS.forEach { getOrCreateTagBuilder(it).add(Items.NETHERITE_INGOT) }
+    private fun testing() = ALL_TAGS.forEach { valueLookupBuilder(it).add(Items.NETHERITE_INGOT) }
 }

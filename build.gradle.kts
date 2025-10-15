@@ -37,13 +37,15 @@ modSettings {
 dependencies {
     // QoL
     modImplementation(libs.modmenu)
-    modCompileOnly("${libs.emi.get()}:api")
-    modLocalRuntime(libs.emi)
+//    modCompileOnly("${libs.emi.get()}:api")
+//    modLocalRuntime(libs.emi)
     // Dev
-    modImplementation(libs.devin)
-    modImplementation(libs.creative.works)
-    modImplementation(libs.fzzy.config)
-    modImplementation(libs.imguimc)
+    modImplementation(libs.devin){
+        isTransitive = false
+    }
+//    modImplementation(libs.creative.works)
+//    modImplementation(libs.fzzy.config)
+//    modImplementation(libs.imguimc)
 }
 
 val username = "vDev"

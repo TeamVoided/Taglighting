@@ -12,36 +12,33 @@ import org.teamvoided.taglighting.data.tags.TaglightingBlockTags as Tags
 class BlockTagProvider(o: FDOut, r: FutureLookup) : BlockTagProvider(o, r) {
 
     override fun addTags(provider: HolderLookup.Provider) {
-        getOrCreateTagBuilder(Tags.SUGAR_CANE_HYDRATION)
-            .add(ICE)
-            .add(FROSTED_ICE)
 
-        getOrCreateTagBuilder(Tags.ENDERMAN_PLACEABLE)
+        valueLookupBuilder(Tags.SUGAR_CANE_HYDRATION)
+            .add(ICE, FROSTED_ICE)
+
+        valueLookupBuilder(Tags.ENDERMAN_PLACEABLE)
             .forceAddTag(BlockTags.ENDERMAN_HOLDABLE)
 
-        getOrCreateTagBuilder(Tags.NETHER_PORTAL_FRAME)
+        valueLookupBuilder(Tags.NETHER_PORTAL_FRAME)
             .add(OBSIDIAN)
 
-        getOrCreateTagBuilder(Tags.PISTON_IMMOVABLE)
-            .add(OBSIDIAN)
-            .add(CRYING_OBSIDIAN)
-            .add(RESPAWN_ANCHOR)
-            .add(REINFORCED_DEEPSLATE)
+        valueLookupBuilder(Tags.PISTON_IMMOVABLE)
+            .add(OBSIDIAN, CRYING_OBSIDIAN, RESPAWN_ANCHOR, REINFORCED_DEEPSLATE)
 
-        getOrCreateTagBuilder(Tags.UNIQUE_STICKY_BLOCK)
+        valueLookupBuilder(Tags.UNIQUE_STICKY_BLOCK)
             .add(SLIME_BLOCK)
             .addTag(Tags.MOB_MOVING_STICKY_BLOCK)
 
-        getOrCreateTagBuilder(Tags.MOB_MOVING_STICKY_BLOCK)
+        valueLookupBuilder(Tags.MOB_MOVING_STICKY_BLOCK)
             .add(HONEY_BLOCK)
 
-        getOrCreateTagBuilder(Tags.SNOW_GOLEM_BASE)
+        valueLookupBuilder(Tags.SNOW_GOLEM_BASE)
             .add(SNOW_BLOCK)
 
-        getOrCreateTagBuilder(Tags.IRON_GOLEM_BASE)
+        valueLookupBuilder(Tags.IRON_GOLEM_BASE)
             .add(IRON_BLOCK)
 
-        getOrCreateTagBuilder(Tags.CANNOT_CONNECT_TO)
+        valueLookupBuilder(Tags.CANNOT_CONNECT_TO)
             .forceAddTag(BlockTags.LEAVES)
             .forceAddTag(BlockTags.SHULKER_BOXES)
             .add(BARRIER, CARVED_PUMPKIN, JACK_O_LANTERN, MELON, PUMPKIN)
@@ -51,39 +48,35 @@ class BlockTagProvider(o: FDOut, r: FutureLookup) : BlockTagProvider(o, r) {
     }
 
     private fun supports() {
-        getOrCreateTagBuilder(Tags.SUPPORTS_SUGAR_CANE)
+        valueLookupBuilder(Tags.SUPPORTS_SUGAR_CANE)
             .forceAddTag(BlockTags.DIRT)
             .forceAddTag(BlockTags.SAND)
 
-        getOrCreateTagBuilder(Tags.SUPPORTS_WITHER_ROSE)
+        valueLookupBuilder(Tags.SUPPORTS_WITHER_ROSE)
             .forceAddTag(BlockTags.DIRT)
-            .add(FARMLAND)
-            .add(NETHERRACK)
-            .add(SOUL_SAND)
-            .add(SOUL_SOIL)
+            .add(FARMLAND, NETHERRACK, SOUL_SAND, SOUL_SOIL)
 
-        getOrCreateTagBuilder(Tags.SUPPORTS_CACTUS)
+        valueLookupBuilder(Tags.SUPPORTS_CACTUS)
             .forceAddTag(BlockTags.SAND)
 
-        getOrCreateTagBuilder(Tags.SUPPORTS_NETHER_WART)
+        valueLookupBuilder(Tags.SUPPORTS_NETHER_WART)
             .add(SOUL_SAND)
 
-        getOrCreateTagBuilder(Tags.SUPPORTS_NYLIUM_PLANTS)
+        valueLookupBuilder(Tags.SUPPORTS_NYLIUM_PLANTS)
             .forceAddTag(BlockTags.NYLIUM)
             .add(SOUL_SOIL)
             .forceAddTag(BlockTags.DIRT)
             .add(FARMLAND)
 
-        getOrCreateTagBuilder(Tags.SUPPORTS_COCOA)
+        valueLookupBuilder(Tags.SUPPORTS_COCOA)
             .forceAddTag(BlockTags.JUNGLE_LOGS)
 
-        getOrCreateTagBuilder(Tags.SUPPORTS_END_CRYSTAL)
-            .add(OBSIDIAN)
-            .add(BEDROCK)
+        valueLookupBuilder(Tags.SUPPORTS_END_CRYSTAL)
+            .add(OBSIDIAN, BEDROCK)
     }
 
     @Suppress("unused")
     private fun testing() = ALL_TAGS.filter { it != Tags.PISTON_IMMOVABLE }.forEach {
-        getOrCreateTagBuilder(it).add(DIAMOND_BLOCK, NETHERITE_BLOCK, GOLD_BLOCK, EMERALD_BLOCK)
+        valueLookupBuilder(it).add(DIAMOND_BLOCK, NETHERITE_BLOCK, GOLD_BLOCK, EMERALD_BLOCK)
     }
 }

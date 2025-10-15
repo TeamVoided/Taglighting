@@ -9,7 +9,7 @@ import org.teamvoided.taglighting.data.tags.TaglightingFluidTags
 
 class FluidTagProvider(o: FDOut, r: FutureLookup) : FluidTagProvider(o, r) {
     override fun addTags(arg: HolderLookup.Provider) {
-        getOrCreateTagBuilder(TaglightingFluidTags.SUGAR_CANE_HYDRATION)
+        valueLookupBuilder(TaglightingFluidTags.SUGAR_CANE_HYDRATION)
             .forceAddTag(FluidTags.WATER)
     }
 }

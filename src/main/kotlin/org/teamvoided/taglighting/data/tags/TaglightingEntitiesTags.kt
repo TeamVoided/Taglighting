@@ -12,5 +12,7 @@ object TaglightingEntitiesTags {
     val ZOGLIN_UNTARGETABLE = create("zoglin_untargetable")
     @JvmField
     val JOHNNY_UNTARGETABLE = create("johnny_untargetable")
+    @JvmField
+    val IS_NOT_ATTACKABLE = create("is_not_attackable")
     private fun create(id: String) = Registries.ENTITY_TYPE.tag(id(id))
 }

@@ -6,21 +6,25 @@ import net.minecraft.world.entity.EntityType.*
 import org.teamvoided.devin.FDOut
 import org.teamvoided.devin.FutureLookup
 import org.teamvoided.taglighting.data.tags.TaglightingEntitiesTags.JOHNNY_UNTARGETABLE
+import org.teamvoided.taglighting.data.tags.TaglightingEntitiesTags.IS_NOT_ATTACKABLE
 import org.teamvoided.taglighting.data.tags.TaglightingEntitiesTags.UNTARGETABLE
 import org.teamvoided.taglighting.data.tags.TaglightingEntitiesTags.WARDEN_UNTARGETABLE
 import org.teamvoided.taglighting.data.tags.TaglightingEntitiesTags.ZOGLIN_UNTARGETABLE
 
 class EntityTagProvider(o: FDOut, r: FutureLookup) : FabricTagProvider.EntityTypeTagProvider(o, r) {
     override fun addTags(arg: HolderLookup.Provider) {
-        getOrCreateTagBuilder(UNTARGETABLE)
-        getOrCreateTagBuilder(WARDEN_UNTARGETABLE)
+        valueLookupBuilder(UNTARGETABLE)
+
+        valueLookupBuilder(WARDEN_UNTARGETABLE)
             .forceAddTag(UNTARGETABLE)
-            .add(ARMOR_STAND)
-            .add(WARDEN)
-        getOrCreateTagBuilder(ZOGLIN_UNTARGETABLE)
+            .add(ARMOR_STAND, WARDEN)
+        valueLookupBuilder(ZOGLIN_UNTARGETABLE)
             .forceAddTag(UNTARGETABLE)
             .add(ZOGLIN, CREEPER)
-        getOrCreateTagBuilder(JOHNNY_UNTARGETABLE)
+        valueLookupBuilder(JOHNNY_UNTARGETABLE)
             .forceAddTag(UNTARGETABLE)
+        valueLookupBuilder(IS_NOT_ATTACKABLE)
+            .forceAddTag(UNTARGETABLE)
+            .add(ARMOR_STAND)
     }
 }
